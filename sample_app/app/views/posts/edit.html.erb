@@ -1,0 +1,19 @@
+<div class="edit-container">
+<%=form_tag("/edits/#{@post.id}/update",{multipart:true}) do%>
+    <input name="post_image1" type="file" value="<%=@post.post_image1%>">
+    <input name="post_image2" type="file" value="<%=@post.post_image2%>">
+    <input name="post_image3" type="file" value="<%=@post.post_image3%>">
+
+    <input name="title"value="<%=@post.title%>">
+    <input name="content"value="<%=@post.content%>">
+    <input type="submit">
+<%end%>
+
+
+
+
+
+
+
+
+</div>
