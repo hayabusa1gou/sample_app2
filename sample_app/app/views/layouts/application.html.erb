@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header-container">
+        <%if @current_user %>
+        <ul>
+          <li><%=link_to("ログアウト","/users/logout", {method: "post"})%></li>
+          <li><%=link_to("Myページ","/users/#{@current_user.id}")%></li>
+          <li><%=link_to("メニュー","#")%></li>
+          
+        </ul>
+        <%else%>
+        <ul>
+          <li><%=link_to("ログイン","/users/login_form")%></li>
+          <li><%=link_to("新規登録","/users/new")%></li>
+          <li><%=link_to("メニュー","#")%></li>
+        </ul>
+        <%end%>
+      </div>
+
+
+    </header>
+    <%= yield %>
+  </body>
+</html>
