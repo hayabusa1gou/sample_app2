@@ -1,0 +1,22 @@
+<div class="user-container">
+    
+    
+    <% @posts.each do |post| %>
+      
+    
+        <div class="posts-list">
+        <%=post%>
+        <p><%=link_to("更新","/posts/#{post.id}/edit")%></p>
+        <p><%=link_to("削除","/posts/#{post.id}/destroy")%></p>
+
+
+
+
+
+        </div>
+    <% end %>
+
+
+
+
+</div>
