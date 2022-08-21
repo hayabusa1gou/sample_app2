@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post "reviews/:id/create" => "reviews#reviews_create"
   get "reviews/:id/destroy" => "reviews#reviews_destroy"
 
-  post "likes/:id/create" => "likes#likes_create"
+  get "likes/:id/create" => "likes#likes_create"
   get "likes/:id/destroy" => "likes#likes_destroy"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
