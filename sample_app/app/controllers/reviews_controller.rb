@@ -18,9 +18,16 @@ class ReviewsController < ApplicationController
     end
 
     def ensure_user
-        @review=Review.find_by(id:params[:id])
-        if @review.user_id!=@current_user.id
-          redirect_to("/posts/index")
+
+        if @current_user.id!=nil
+        
+            @review=Review.find_by(user_id:@current_user.id)
+            if @review.user_id!=@current_user.id
+                redirect_to("/posts/index")
+            end
+        else
+            redirect_to("/post/index")
+
         end
     
     end

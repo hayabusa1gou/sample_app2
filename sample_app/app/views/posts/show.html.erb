@@ -21,8 +21,12 @@
     <% @reviews.each do |review| %>
       <div>
       <%=review.content%>
-      <%if @current_user.id==review.user_id%>
-        <p><%=link_to("削除","/reviews/#{@post.id}/destroy")%></p>
+      <%if @current_user.id!=nil%>
+        <%if @current_user.id==review.user_id%>
+          <p><%=link_to("削除","/reviews/#{@post.id}/destroy")%></p>
+        <%end%>
+
+
       <%end%>
       </div>
       
