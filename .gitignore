@@ -1,21 +1,22 @@
 *.rbc
 capybara-*.html
 .rspec
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/db/*.sqlite3-[0-9]*
-/public/system
-/coverage/
-/spec/tmp
+sample_app/db/*.sqlite3
+sample_app/db/*.sqlite3-journal
+sample_app/db/*.sqlite3-[0-9]*
+sample_app/public/system
+sample_app/coverage/
+sample_app/spec/tmp
 *.orig
 rerun.txt
 pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
+sample_app/log/*
+sample_app/tmp/*
 !/log/.keep
 !/tmp/.keep
+
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
@@ -54,12 +55,12 @@ bower.json
 node_modules/
 
 # Ignore precompiled javascript packs
-/public/packs
-/public/packs-test
-/public/assets
+sample_app/public/packs
+sample_app/public/packs-test
+sample_app/public/assets
 
 # Ignore yarn files
-/yarn-error.log
+sample_app/yarn-error.log
 yarn-debug.log*
 .yarn-integrity
 
