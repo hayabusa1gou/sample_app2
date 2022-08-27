@@ -35,7 +35,7 @@ class UsersController < ApplicationController
   end
 
   def login_form
-    redirect_to("/users/login_form")
+    redirect_to("/users/login")
   end
 
   def login
@@ -50,6 +50,7 @@ class UsersController < ApplicationController
 
   def logout
     session[:user_id]=nil
+    @current_user=nil
     redirect_to("/posts/index")
   end
 
