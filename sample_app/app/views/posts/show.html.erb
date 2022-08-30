@@ -36,3 +36,14 @@
 
 
 </div>
+
+
+<div class="login_form">
+            <%=form_tag("/users/login") do%>
+        
+                <input class="check-email" name="email"value="メールアドレス">
+                <input class="check-password "name="password"value="パスワード">
+                <input type="submit">
+
+            <%end %>
+        </div>

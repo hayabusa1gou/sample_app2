@@ -1,13 +1,18 @@
-<div class="register_form">
-    <%=form_tag("/users/create") do%>
+<div class="new-form-package">
+    <div class="new-form-container">
+        <img class="new-form-logo" src="/アセット 1.svg" width="180" height="100">
+        <%=form_tag("/users/create") do%>
 
-        <input name="name" value="<%=@user.name%>">
+            <%# <input class="new-name" name="name" value="<%=@user.name%>
 
-        <input name="email"value="<%=@user.email%>">
+            <input class="new-email" name="email" value="<%=@user.email%>">
 
-        <input name="password"value="<%=@user.password%>">
-        
-        <input type="submit" value="新規登録">
+            <input class="new-password" name="password" value="<%=@user.password%>">
 
-    <%end%>
+            <input class="new-btn" type="submit" value="新規登録">
+
+        <%end%> 
+    </div>
+
+    
 </div>

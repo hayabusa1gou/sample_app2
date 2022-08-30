@@ -35,7 +35,6 @@ class UsersController < ApplicationController
   end
 
   def login_form
-    redirect_to("/users/login")
   end
 
   def login
