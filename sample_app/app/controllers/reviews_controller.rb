@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+    before_action :authenticate_user
     before_action :ensure_user ,{only: [:reviews_destroy]}
 
     def reviews_create
