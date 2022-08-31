@@ -1,29 +1,35 @@
-<div class="main-container">
+<div class="main-container contents">
     
-    <%=link_to("新規投稿","/posts/new")%>
-    <% @posts.each do |post| %>
-        <div class="contents">
-                
-                <img src="<%="/user_images/#{post.post_image1}"%>">
-                <%=link_to(post.title,"/posts/#{post.id}")%>
-              
-                
-                <%if @current_user!=nil%>
-                    <%if Like.find_by(post_id:post.id,user_id:@current_user.id)%>
-                        
-                        <%=link_to("好き","/likes/#{post.id}/destroy")%>
+    
 
-                    <%else%>
-                        <%=link_to("普通","/likes/#{post.id}/create")%>
-
-                    <%end%>
-                <%else%>
-                        <%=link_to("普通","/likes/#{post.id}/create")%>
-                <%end%>
-                
-
+        <% @posts.each do |post|%>
         
-        </div>
-    <% end %>
+            <div class="content">
+                    
+                    <img src="<%="/user_images/#{post.post_image1}"%>">
+                    
+                    <%=link_to(post.title,"/posts/#{post.id}")%>
+                
+                    
+                    <%if @current_user!=nil%>
+                        <%if Like.find_by(post_id:post.id,user_id:@current_user.id)%>
+                            
+                            <%=link_to("好き","/likes/#{post.id}/destroy")%>
+
+                        <%else%>
+                            <%=link_to("普通","/likes/#{post.id}/create")%>
+
+                        <%end%>
+                    <%else%>
+                            <%=link_to("普通","/likes/#{post.id}/create")%>
+                    <%end%>
+
+                    <%=link_to("新規投稿","/posts/new")%>
+
+                    
+
+            
+            </div>
+        <% end %>
 
 </div>

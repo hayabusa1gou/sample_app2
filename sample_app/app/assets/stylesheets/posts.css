@@ -71,6 +71,58 @@ a {
     letter-spacing: -0.05em;
 }
 
+.main-container {
+    width: 100%;
+    display: flex;
+}
+
+.contents {
+    flex-wrap: wrap;
+}
+
+.content {
+    width: 50%;
+}
+
+.comment-form {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    border-radius: 0px;
+    height: 600px;
+    width: 100%;
+    margin-top: 70px;
+    overflow: hidden;
+}
+
+.comment-box {
+    position: absolute;
+    top: 80px;
+    left: 320px;
+    font-weight: bold;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 0px;
+    height: 340px;
+    width: 50%;
+    overflow: hidden;
+}
+
+.comment-post-btn {
+    top: 460px;
+    left: 520px;
+    position: absolute;
+    font-weight: bold;
+    background-color: #fff;
+    box-sizing: border-box;
+    border: 1.5px solid rgb(0, 0, 0);
+    border-radius: 0px;
+    height: 3.5em;
+    width: 300px;
+    overflow: hidden;
+}
+
 .footer-container {
     height: 100px;
     width: 100%;

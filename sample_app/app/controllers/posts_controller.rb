@@ -18,13 +18,27 @@ class PostsController < ApplicationController
   def create
     
     @post=Post.new(
-      post_image1:params[:post_image1],
-      post_image2:params[:post_image2],
-      post_image3:params[:post_image3],
+      post_image1:nil,
+      post_image2:nil,
+      post_image3:nil,
       title:params[:title],
       content:params[:content], 
       user_id:@current_user.id
-      )
+    )
+
+    if params[:post_image1]
+      @post.post_image1=params[:post_image1]
+    end
+  
+    if params[:post_image2]
+      @post.post_image2=params[:post_image2]
+    end
+
+    if params[:post_image3]
+      @post.post_image3=params[:post_image3]
+    end
+
+
     @post.save
 
     if params[:post_image1]
@@ -58,6 +72,7 @@ class PostsController < ApplicationController
     else
       render("posts/new")
     end
+    
   end
 
   def show
