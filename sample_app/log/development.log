@@ -33637,3 +33637,1587 @@ Started GET "/user_images/" for ::1 at 2022-08-31 22:58:55 +0900
   
 ActionController::RoutingError (No route matches [GET] "/user_images"):
   
+Started GET "/posts/index" for ::1 at 2022-08-31 23:00:31 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 25], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 25], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4606)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 5877)
+Completed 200 OK in 30ms (Views: 21.5ms | ActiveRecord: 2.1ms | Allocations: 6883)
+
+
+Started GET "/users/25" for ::1 at 2022-08-31 23:00:37 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:30:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 25]]
+  ↳ app/views/users/show.html.erb:4
+  Rendered users/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1106)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 2558)
+Completed 200 OK in 26ms (Views: 14.9ms | ActiveRecord: 0.8ms | Allocations: 4760)
+
+
+Started GET "/posts/index" for ::1 at 2022-08-31 23:00:42 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 25], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 25], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3049)
+Completed 200 OK in 17ms (Views: 12.2ms | ActiveRecord: 1.1ms | Allocations: 4078)
+
+
+Started GET "/posts/48" for ::1 at 2022-08-31 23:46:10 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 48]]
+  ↳ app/controllers/posts_controller.rb:81:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 747)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 2010)
+Completed 200 OK in 31ms (Views: 17.0ms | ActiveRecord: 1.7ms | Allocations: 4650)
+
+
+Started GET "/user_images/" for ::1 at 2022-08-31 23:46:10 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user_images"):
+  
+Started GET "/users/logout" for ::1 at 2022-08-31 23:50:15 +0900
+Processing by UsersController#logout as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/posts/index
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 808)
+
+
+Started GET "/posts/index" for ::1 at 2022-08-31 23:50:15 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2013)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 0.5ms | Allocations: 3148)
+
+
+Started GET "/likes/45/create" for ::1 at 2022-08-31 23:50:17 +0900
+Processing by LikesController#likes_create as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/users/new
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms | Allocations: 1228)
+
+
+Started GET "/users/new" for ::1 at 2022-08-31 23:50:17 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 431)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 1779)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.2ms | Allocations: 2955)
+
+
+Started GET "/likes/48/create" for ::1 at 2022-08-31 23:50:21 +0900
+Processing by LikesController#likes_create as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/users/new
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 919)
+
+
+Started GET "/users/new" for ::1 at 2022-08-31 23:50:21 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1414)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 2478)
+
+
+Started GET "/likes/45/create" for ::1 at 2022-08-31 23:50:26 +0900
+Processing by LikesController#likes_create as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/users/new
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 928)
+
+
+Started GET "/users/new" for ::1 at 2022-08-31 23:50:26 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 1421)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 2491)
+
+
+Started GET "/posts/index" for ::1 at 2022-08-31 23:50:46 +0900
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 3168)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4614)
+Completed 200 OK in 27ms (Views: 11.9ms | ActiveRecord: 1.9ms | Allocations: 8471)
+
+
+Started GET "/likes/45/create" for ::1 at 2022-08-31 23:50:50 +0900
+Processing by LikesController#likes_create as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/users/login_form
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1240)
+
+
+Started GET "/users/login_form" for ::1 at 2022-08-31 23:50:50 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 3.0ms | Allocations: 423)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 1844)
+Completed 200 OK in 16ms (Views: 10.2ms | ActiveRecord: 0.2ms | Allocations: 3567)
+
+
+Started GET "/likes/45/create" for ::1 at 2022-08-31 23:50:53 +0900
+Processing by LikesController#likes_create as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/users/login_form
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1107)
+
+
+Started GET "/users/login_form" for ::1 at 2022-08-31 23:50:53 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1414)
+Completed 200 OK in 10ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 2464)
+
+
+Started GET "/posts/index" for ::1 at 2022-08-31 23:51:18 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 728)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 1978)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.3ms | Allocations: 3041)
+
+
+Started GET "/posts/index" for ::1 at 2022-08-31 23:51:26 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 722)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 1972)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 0.5ms | Allocations: 3033)
+
+
+Started GET "/posts/45" for ::1 at 2022-08-31 23:51:30 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 45]]
+  ↳ app/controllers/posts_controller.rb:81:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 860)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2206)
+Completed 200 OK in 101ms (Views: 8.0ms | ActiveRecord: 1.1ms | Allocations: 12847)
+
+
+Started GET "/user_images/" for ::1 at 2022-08-31 23:51:30 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user_images"):
+  
+Started GET "/posts/index" for ::1 at 2022-08-31 23:51:34 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 725)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 1976)
+Completed 200 OK in 14ms (Views: 9.6ms | ActiveRecord: 0.4ms | Allocations: 3056)
+
+
+Started GET "/posts/45" for ::1 at 2022-08-31 23:51:36 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+  [1m[36mLike Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 45]]
+  ↳ app/controllers/posts_controller.rb:81:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 1949)
+Completed 200 OK in 28ms (Views: 17.1ms | ActiveRecord: 1.3ms | Allocations: 4042)
+
+
+Started GET "/user_images/" for ::1 at 2022-08-31 23:51:37 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user_images"):
+  
+Started POST "/reviews/45/create" for ::1 at 2022-08-31 23:51:39 +0900
+Processing by ReviewsController#reviews_create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"", "id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/users/login_form
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1340)
+
+
+Started GET "/users/login_form" for ::1 at 2022-08-31 23:51:39 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 1533)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 2637)
+
+
+Started POST "/reviews/45/create" for ::1 at 2022-08-31 23:53:31 +0900
+Processing by ReviewsController#reviews_create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"", "id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Redirected to http://localhost:3000/users/login_form
+Filter chain halted as :authenticate_user rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 981)
+
+
+Started GET "/users/login_form" for ::1 at 2022-08-31 23:53:31 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.5ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1414)
+Completed 200 OK in 13ms (Views: 8.9ms | ActiveRecord: 0.1ms | Allocations: 2465)
+
+
+Started GET "/users/new" for ::1 at 2022-08-31 23:53:38 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 170)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 1421)
+Completed 200 OK in 28ms (Views: 21.9ms | ActiveRecord: 0.5ms | Allocations: 3900)
+
+
+Started GET "/users/login_form" for ::1 at 2022-08-31 23:53:49 +0900
+Processing by UsersController#login_form as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/login_form.html.erb within layouts/application
+  Rendered users/login_form.html.erb within layouts/application (Duration: 0.3ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1421)
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 2460)
+
+
+Started GET "/users/new" for ::1 at 2022-08-31 23:53:53 +0900
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 164)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1414)
+Completed 200 OK in 10ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 2469)
+
+
+Started POST "/users/create" for ::1 at 2022-08-31 23:54:21 +0900
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"name", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "name", "password", "user_image", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "name"], ["name", nil], ["password", "[FILTERED]"], ["user_image", "icons8-ユーザー-50.png"], ["created_at", "2022-08-31 14:54:22.040065"], ["updated_at", "2022-08-31 14:54:22.040065"]]
+  ↳ app/controllers/users_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:18:in `create'
+Redirected to http://localhost:3000/posts/index
+Completed 302 Found in 15ms (ActiveRecord: 6.7ms | Allocations: 3016)
+
+
+Started GET "/posts/index" for ::1 at 2022-08-31 23:54:22 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2980)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 4255)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 1.0ms | Allocations: 5813)
+
+
+Started GET "/posts/45" for ::1 at 2022-08-31 23:54:24 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 45]]
+  ↳ app/controllers/posts_controller.rb:81:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 1970)
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 0.7ms | Allocations: 3942)
+
+
+Started GET "/user_images/" for ::1 at 2022-08-31 23:54:24 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user_images"):
+  
+Started POST "/reviews/45/create" for ::1 at 2022-08-31 23:54:35 +0900
+Processing by ReviewsController#reviews_create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"良い作品ですね。", "id"=>"45"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `reviews_create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:8:in `reviews_create'
+  [1m[36mReview Create (2.2ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "post_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 26], ["post_id", 45], ["content", "良い作品ですね。"], ["created_at", "2022-08-31 14:54:35.886013"], ["updated_at", "2022-08-31 14:54:35.886013"]]
+  ↳ app/controllers/reviews_controller.rb:8:in `reviews_create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:8:in `reviews_create'
+Redirected to http://localhost:3000/posts/45
+Completed 302 Found in 20ms (ActiveRecord: 8.9ms | Allocations: 4720)
+
+
+Started GET "/posts/45" for ::1 at 2022-08-31 23:54:35 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 45]]
+  ↳ app/controllers/posts_controller.rb:81:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 773)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2041)
+Completed 200 OK in 17ms (Views: 8.4ms | ActiveRecord: 0.7ms | Allocations: 4009)
+
+
+Started GET "/user_images/" for ::1 at 2022-08-31 23:54:36 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user_images"):
+  
+Started GET "/reviews/45/destroy" for ::1 at 2022-08-31 23:54:39 +0900
+Processing by ReviewsController#reviews_destroy as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? LIMIT ?[0m  [["user_id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:24:in `ensure_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:13:in `reviews_destroy'
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."user_id" = ? AND "reviews"."post_id" = ? LIMIT ?[0m  [["user_id", 26], ["post_id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:14:in `reviews_destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:15:in `reviews_destroy'
+  [1m[36mReview Destroy (1.2ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/reviews_controller.rb:15:in `reviews_destroy'
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:15:in `reviews_destroy'
+Redirected to http://localhost:3000/posts/45
+Completed 302 Found in 20ms (ActiveRecord: 6.7ms | Allocations: 5219)
+
+
+Started GET "/posts/45" for ::1 at 2022-08-31 23:54:40 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+  [1m[36mLike Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 45]]
+  ↳ app/controllers/posts_controller.rb:81:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1970)
+Completed 200 OK in 14ms (Views: 7.6ms | ActiveRecord: 0.8ms | Allocations: 3962)
+
+
+Started GET "/user_images/" for ::1 at 2022-08-31 23:54:40 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user_images"):
+  
+Started POST "/reviews/45/create" for ::1 at 2022-08-31 23:54:52 +0900
+Processing by ReviewsController#reviews_create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "content"=>"良い作品ですね。", "id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/reviews_controller.rb:6:in `reviews_create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/reviews_controller.rb:8:in `reviews_create'
+  [1m[36mReview Create (1.3ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "post_id", "content", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["user_id", 26], ["post_id", 45], ["content", "良い作品ですね。"], ["created_at", "2022-08-31 14:54:52.663590"], ["updated_at", "2022-08-31 14:54:52.663590"]]
+  ↳ app/controllers/reviews_controller.rb:8:in `reviews_create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/reviews_controller.rb:8:in `reviews_create'
+Redirected to http://localhost:3000/posts/45
+Completed 302 Found in 16ms (ActiveRecord: 7.0ms | Allocations: 3106)
+
+
+Started GET "/posts/45" for ::1 at 2022-08-31 23:54:52 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+  [1m[36mLike Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 45]]
+  ↳ app/controllers/posts_controller.rb:81:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  ↳ app/views/posts/show.html.erb:25
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 755)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 2018)
+Completed 200 OK in 15ms (Views: 7.9ms | ActiveRecord: 1.0ms | Allocations: 3986)
+
+
+Started GET "/user_images/" for ::1 at 2022-08-31 23:54:52 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user_images"):
+  
+Started GET "/posts/index" for ::1 at 2022-08-31 23:59:46 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.2ms | Allocations: 1767)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 3045)
+Completed 200 OK in 31ms (Views: 24.0ms | ActiveRecord: 1.5ms | Allocations: 3989)
+
+
+Started GET "/posts/index" for ::1 at 2022-09-01 00:00:50 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1767)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 3038)
+Completed 200 OK in 26ms (Views: 18.5ms | ActiveRecord: 1.2ms | Allocations: 4015)
+
+
+Started GET "/posts/index" for ::1 at 2022-09-01 00:07:36 +0900
+Started GET "/posts/index" for ::1 at 2022-09-01 00:07:38 +0900
+Processing by PostsController#index as HTML
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 6099)
+  Rendered layout layouts/application.html.erb (Duration: 29.3ms | Allocations: 8046)
+Completed 200 OK in 63ms (Views: 38.0ms | ActiveRecord: 2.1ms | Allocations: 13708)
+
+
+Processing by PostsController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 28.4ms | Allocations: 6582)
+Started GET "/posts/index" for ::1 at 2022-09-01 00:07:41 +0900
+  Rendered layout layouts/application.html.erb (Duration: 76.5ms | Allocations: 8270)
+Completed 200 OK in 117ms (Views: 75.5ms | ActiveRecord: 8.0ms | Allocations: 14083)
+
+
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1772)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 3044)
+Completed 200 OK in 28ms (Views: 20.8ms | ActiveRecord: 1.3ms | Allocations: 4086)
+
+
+Started GET "/posts/index" for ::1 at 2022-09-01 00:08:01 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 2312)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 4174)
+Completed 200 OK in 70ms (Views: 55.3ms | ActiveRecord: 2.1ms | Allocations: 5678)
+
+
+Started GET "/posts/searched_index?searched=AI" for ::1 at 2022-09-01 00:08:04 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"searched"=>"AI", "id"=>"searched_index"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.6ms | Allocations: 3920)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+    @likes_count = Like.where(post_id: @post.id).count
+                                            ^^^):
+  
+app/controllers/posts_controller.rb:81:in `show'
+Started GET "/posts/searched_index?searched=AI" for ::1 at 2022-09-01 00:13:34 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"searched"=>"AI", "id"=>"searched_index"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.8ms | Allocations: 3564)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+    @likes_count = Like.where(post_id: @post.id).count
+                                            ^^^):
+  
+app/controllers/posts_controller.rb:81:in `show'
+Started GET "/posts/searched_index?searched=AI" for ::1 at 2022-09-01 00:20:07 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"searched"=>"AI", "id"=>"searched_index"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.4ms | Allocations: 3425)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+    @likes_count = Like.where(post_id: @post.id).count
+                                            ^^^):
+  
+app/controllers/posts_controller.rb:81:in `show'
+Started GET "/posts/searched_index?searched=AI" for ::1 at 2022-09-01 00:24:33 +0900
+Processing by PostsController#show as HTML
+  Parameters: {"searched"=>"AI", "id"=>"searched_index"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:79:in `show'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.7ms | Allocations: 2825)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass
+
+    @likes_count = Like.where(post_id: @post.id).count
+                                            ^^^):
+  
+app/controllers/posts_controller.rb:81:in `show'
+Started GET "/posts/index" for ::1 at 2022-09-01 00:27:21 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 2384)
+  Rendered layout layouts/application.html.erb (Duration: 46.4ms | Allocations: 3942)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.9ms | Allocations: 5390)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/30c9e411c9.js" crossorigin="anonymous"></script>    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <div class="header-left-container">
+
+        <a href="/posts/index"><img class="logo" src="/logo_image.svg" width="180" height="100"></a>
+      </div>
+
+ 
+      <div class="header-center-container">
+        <%# <form method="get" action="/posts/searched_index" class="search_container"> %>
+          <%=form_tag("/posts/searched_index")%>
+            <input name="searched" type="text" size="55" >
+          <%# <input type="submit" value="&#xf002"> %>
+        <%# </form>       %>
+          <%end%>
+      </div> 
+
+
+
+
+      <div class="header-right-container">
+        <%if @current_user %>
+        <ul>
+          <li><%=link_to("ログアウト","/users/logout", {method: "post"})%></li>
+          <li><%=link_to("Myページ","/users/#{@current_user.id}")%></li>
+          <li><%=link_to("メニュー","#")%></li>
+          
+        </ul>
+        <%else%>
+        <ul>
+          <li><%=link_to("ログイン","/users/login_form")%></li>
+          <li><%=link_to("新規登録","/users/new")%></li>
+          <li><%=link_to("メニュー","#")%></li>
+        </ul>
+        <%end%>
+      </div>
+
+
+    </header>
+    <%= yield %>
+
+    <footer>
+
+      <div class="footer-container">
+        <div class="footer-left-container">
+          <ul>
+            <li class="selector">fashonalizeについて</li>
+            <li class="selector2">各種お問い合わせ</li>
+
+          </ul>
+        </div>
+
+
+
+        <div class="footer-right-container">
+          <ul>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-facebook-f"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+
+
+
+          </ul>
+
+
+        </div>
+      </div>
+
+    </footer> 
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>SampleApp</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:        <script src="https://kit.fontawesome.com/30c9e411c9.js" crossorigin="anonymous"></script>    
+9:        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+10:      </head>
+11:    
+12:      <body>
+13:        <header class="header-container">
+14:          <div class="header-left-container">
+15:    
+16:            <a href="/posts/index"><img class="logo" src="/logo_image.svg" width="180" height="100"></a>
+17:          </div>
+18:    
+19:     
+20:          <div class="header-center-container">
+21:            <%# <form method="get" action="/posts/searched_index" class="search_container"> %>
+22:              <%=form_tag("/posts/searched_index")%>
+23:                <input name="searched" type="text" size="55" >
+24:              <%# <input type="submit" value="&#xf002"> %>
+25:            <%# </form>       %>
+26:              <%end%>
+27:          </div> 
+28:    
+29:    
+30:    
+31:    
+32:          <div class="header-right-container">
+33:            <%if @current_user %>
+34:            <ul>
+35:              <li><%=link_to("ログアウト","/users/logout", {method: "post"})%></li>
+36:              <li><%=link_to("Myページ","/users/#{@current_user.id}")%></li>
+37:              <li><%=link_to("メニュー","#")%></li>
+38:              
+39:            </ul>
+40:            <%else%>
+41:            <ul>
+42:              <li><%=link_to("ログイン","/users/login_form")%></li>
+43:              <li><%=link_to("新規登録","/users/new")%></li>
+44:              <li><%=link_to("メニュー","#")%></li>
+45:            </ul>
+46:            <%end%>
+47:          </div>
+48:    
+49:    
+50:        </header>
+51:        <%= yield %>
+52:    
+53:        <footer>
+54:    
+55:          <div class="footer-container">
+56:            <div class="footer-left-container">
+57:              <ul>
+58:                <li class="selector">fashonalizeについて</li>
+59:                <li class="selector2">各種お問い合わせ</li>
+60:    
+61:              </ul>
+62:            </div>
+63:    
+64:    
+65:    
+66:            <div class="footer-right-container">
+67:              <ul>
+68:                <li><i class="fa-brands fa-twitter"></i></li>
+69:                <li><i class="fa-brands fa-facebook-f"></i></li>
+70:                <li><i class="fa-brands fa-instagram"></i></li>
+71:    
+72:    
+73:    
+74:              </ul>
+75:    
+76:    
+77:            </div>
+78:          </div>
+79:    
+80:        </footer> 
+81:      </body>
+82:    </html>
+  
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+Started GET "/posts/index" for ::1 at 2022-09-01 00:28:08 +0900
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 45], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.9ms | Allocations: 2311)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 4418)
+Completed 200 OK in 70ms (Views: 56.7ms | ActiveRecord: 1.9ms | Allocations: 5947)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:28:13 +0900
+  
+ActionController::RoutingError (No route matches [POST] "/posts/searched_index"):
+  
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:28:35 +0900
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:28:38 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"AI"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "AI"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1199)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 2870)
+Completed 200 OK in 60ms (Views: 21.7ms | ActiveRecord: 5.2ms | Allocations: 9415)
+
+
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"AI"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (19.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "AI"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 764)
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:28:40 +0900
+  Rendered layout layouts/application.html.erb (Duration: 70.4ms | Allocations: 2957)
+Completed 200 OK in 115ms (Views: 53.8ms | ActiveRecord: 24.3ms | Allocations: 9349)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:28:41 +0900
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:28:41 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"AI"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "AI"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 631)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 2235)
+Completed 200 OK in 35ms (Views: 25.6ms | ActiveRecord: 0.5ms | Allocations: 3441)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:28:41 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"AI"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "AI"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 18.2ms | Allocations: 620)
+  Rendered layout layouts/application.html.erb (Duration: 42.6ms | Allocations: 2135)
+Completed 200 OK in 54ms (Views: 45.4ms | ActiveRecord: 0.9ms | Allocations: 3239)
+
+
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"AI"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "AI"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 590)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 2078)
+Completed 200 OK in 30ms (Views: 20.1ms | ActiveRecord: 0.5ms | Allocations: 3132)
+
+
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"AI"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "AI"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 1968)
+Completed 200 OK in 27ms (Views: 17.1ms | ActiveRecord: 0.6ms | Allocations: 2977)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:29:59 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"あ"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "あ"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/searched_index.html.erb:15
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 216.4ms | Allocations: 13382)
+  Rendered layout layouts/application.html.erb (Duration: 232.1ms | Allocations: 14912)
+Completed 200 OK in 239ms (Views: 231.8ms | ActiveRecord: 2.8ms | Allocations: 15955)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:30:05 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", ""]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 575)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 1982)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 0.7ms | Allocations: 3096)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:30:07 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", ""]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 563)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 1968)
+Completed 200 OK in 30ms (Views: 21.8ms | ActiveRecord: 0.9ms | Allocations: 3001)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:30:10 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"あ"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "あ"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/searched_index.html.erb:15
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1179)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 2583)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 0.6ms | Allocations: 3607)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:31:57 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"あ"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "あ"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/searched_index.html.erb:15
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 1735)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 3259)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.6ms | Allocations: 4800)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>SampleApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/30c9e411c9.js" crossorigin="anonymous"></script>    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <header class="header-container">
+      <div class="header-left-container">
+
+        <a href="/posts/index"><img class="logo" src="/logo_image.svg" width="180" height="100"></a>
+      </div>
+
+ 
+      <div class="header-center-container">
+        <form method="post" action="/posts/searched_index" class="search_container">
+          <%# <%=form_tag("/posts/searched_index") do%> 
+            <input name="searched" type="text" size="55" >
+          <%# <input type="submit" value="&#xf002"> %>
+        </form>      
+          <%end%>
+      </div> 
+
+
+
+
+      <div class="header-right-container">
+        <%if @current_user %>
+        <ul>
+          <li><%=link_to("ログアウト","/users/logout", {method: "post"})%></li>
+          <li><%=link_to("Myページ","/users/#{@current_user.id}")%></li>
+          <li><%=link_to("メニュー","#")%></li>
+          
+        </ul>
+        <%else%>
+        <ul>
+          <li><%=link_to("ログイン","/users/login_form")%></li>
+          <li><%=link_to("新規登録","/users/new")%></li>
+          <li><%=link_to("メニュー","#")%></li>
+        </ul>
+        <%end%>
+      </div>
+
+
+    </header>
+    <%= yield %>
+
+    <footer>
+
+      <div class="footer-container">
+        <div class="footer-left-container">
+          <ul>
+            <li class="selector">fashonalizeについて</li>
+            <li class="selector2">各種お問い合わせ</li>
+
+          </ul>
+        </div>
+
+
+
+        <div class="footer-right-container">
+          <ul>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-facebook-f"></i></li>
+            <li><i class="fa-brands fa-instagram"></i></li>
+
+
+
+          </ul>
+
+
+        </div>
+      </div>
+
+    </footer> 
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>SampleApp</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:        <script src="https://kit.fontawesome.com/30c9e411c9.js" crossorigin="anonymous"></script>    
+9:        <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+10:      </head>
+11:    
+12:      <body>
+13:        <header class="header-container">
+14:          <div class="header-left-container">
+15:    
+16:            <a href="/posts/index"><img class="logo" src="/logo_image.svg" width="180" height="100"></a>
+17:          </div>
+18:    
+19:     
+20:          <div class="header-center-container">
+21:            <form method="post" action="/posts/searched_index" class="search_container">
+22:              <%# <%=form_tag("/posts/searched_index") do%> 
+23:                <input name="searched" type="text" size="55" >
+24:              <%# <input type="submit" value="&#xf002"> %>
+25:            </form>      
+26:              <%end%>
+27:          </div> 
+28:    
+29:    
+30:    
+31:    
+32:          <div class="header-right-container">
+33:            <%if @current_user %>
+34:            <ul>
+35:              <li><%=link_to("ログアウト","/users/logout", {method: "post"})%></li>
+36:              <li><%=link_to("Myページ","/users/#{@current_user.id}")%></li>
+37:              <li><%=link_to("メニュー","#")%></li>
+38:              
+39:            </ul>
+40:            <%else%>
+41:            <ul>
+42:              <li><%=link_to("ログイン","/users/login_form")%></li>
+43:              <li><%=link_to("新規登録","/users/new")%></li>
+44:              <li><%=link_to("メニュー","#")%></li>
+45:            </ul>
+46:            <%end%>
+47:          </div>
+48:    
+49:    
+50:        </header>
+51:        <%= yield %>
+52:    
+53:        <footer>
+54:    
+55:          <div class="footer-container">
+56:            <div class="footer-left-container">
+57:              <ul>
+58:                <li class="selector">fashonalizeについて</li>
+59:                <li class="selector2">各種お問い合わせ</li>
+60:    
+61:              </ul>
+62:            </div>
+63:    
+64:    
+65:    
+66:            <div class="footer-right-container">
+67:              <ul>
+68:                <li><i class="fa-brands fa-twitter"></i></li>
+69:                <li><i class="fa-brands fa-facebook-f"></i></li>
+70:                <li><i class="fa-brands fa-instagram"></i></li>
+71:    
+72:    
+73:    
+74:              </ul>
+75:    
+76:    
+77:            </div>
+78:          </div>
+79:    
+80:        </footer> 
+81:      </body>
+82:    </html>
+  
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:85: syntax error, unexpected `end', expecting end-of-input
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:32:14 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "searched"=>"あ"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "あ"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  [1m[36mLike Load (0.5ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/searched_index.html.erb:15
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 1734)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 3611)
+Completed 200 OK in 62ms (Views: 47.4ms | ActiveRecord: 1.3ms | Allocations: 5250)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:32:17 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"searched"=>"あ"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 3ms (ActiveRecord: 0.0ms | Allocations: 492)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:32:29 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"searched"=>"あ"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 458)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:32:56 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"searched"=>""}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 458)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.3.1) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.3.1) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.3.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.3.1) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.3.1) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.3.1) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.3.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.3.1) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.3.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.3.1) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.3.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.3.1) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (7.0.3.1) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.3.1) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.3.1) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `block in tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:38:in `tagged'
+activesupport (7.0.3.1) lib/active_support/tagged_logging.rb:114:in `tagged'
+railties (7.0.3.1) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.3.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/server_timing.rb:20:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.3.1) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.3.1) lib/rails/engine.rb:530:in `call'
+puma (5.6.4) lib/puma/configuration.rb:252:in `call'
+puma (5.6.4) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.4) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.4) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.4) lib/puma/server.rb:441:in `process_client'
+puma (5.6.4) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:34:47 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"searched"=>""}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Can't verify CSRF token authenticity.
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", ""]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 760)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 2145)
+Completed 200 OK in 58ms (Views: 22.7ms | ActiveRecord: 3.7ms | Allocations: 8503)
+
+
+Started POST "/posts/searched_index" for ::1 at 2022-09-01 00:34:52 +0900
+Processing by PostsController#searched_index as HTML
+  Parameters: {"searched"=>"あ"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8:in `set_current_user'
+Can't verify CSRF token authenticity.
+  Rendering layout layouts/application.html.erb
+  Rendering posts/searched_index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."title" = ?[0m  [["title", "あ"]]
+  ↳ app/views/posts/searched_index.html.erb:5
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ? AND "likes"."user_id" = ? LIMIT ?[0m  [["post_id", 48], ["user_id", 26], ["LIMIT", 1]]
+  ↳ app/views/posts/searched_index.html.erb:15
+  Rendered posts/searched_index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 5159)
+  Rendered layout layouts/application.html.erb (Duration: 28.4ms | Allocations: 6447)
+Completed 200 OK in 38ms (Views: 28.7ms | ActiveRecord: 2.4ms | Allocations: 7610)
+
+

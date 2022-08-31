@@ -18,8 +18,9 @@
 
  
       <div class="header-center-container">
-        <form method="get" action="#" class="search_container">
-          <input type="text" size="55" >
+        <form method="post" action="/posts/searched_index" class="search_container">
+          <%# <%=form_tag("/posts/searched_index") do%> 
+            <input name="searched" type="text" size="55" >
           <%# <input type="submit" value="&#xf002"> %>
         </form>      
       </div> 

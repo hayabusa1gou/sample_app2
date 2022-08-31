@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
     def authenticate_user
         if @current_user==nil
-          redirect_to("/users/new")
+          redirect_to("/users/login_form")
         end
     end
 

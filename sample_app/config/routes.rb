@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'posts/:id/edit' => "posts#edit"
   post 'posts/update' => "posts#update"
   get 'posts/:id/destroy' => "posts#destroy"
+  post "posts/searched_index" =>"posts#searched_index"
 
   post "reviews/:id/create" => "reviews#reviews_create"
   get "reviews/:id/destroy" => "reviews#reviews_destroy"

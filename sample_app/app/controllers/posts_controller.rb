@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  protect_from_forgery
   before_action :authenticate_user,{only: [:new,:create,:edit,:update,:destroy,:likes,:reviews]}
   before_action :ensure_user,{only: [:edit,:update,:destroy]}
 
@@ -104,6 +105,12 @@ class PostsController < ApplicationController
     if @post.user_id!=@current_user.id
         redirect_to("/posts/index")
     end
+  end
+
+  def searched_index
+
+    @posts=Post.where(title:params[:searched])
+
   end
 
   
