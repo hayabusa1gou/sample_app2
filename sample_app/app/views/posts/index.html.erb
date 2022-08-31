@@ -3,7 +3,8 @@
     <%=link_to("新規投稿","/posts/new")%>
     <% @posts.each do |post| %>
         <div class="contents">
-            
+                
+                <img src="<%="/user_images/#{post.post_image1}"%>">
                 <%=link_to(post.title,"/posts/#{post.id}")%>
               
                 
@@ -19,7 +20,7 @@
                 <%else%>
                         <%=link_to("普通","/likes/#{post.id}/create")%>
                 <%end%>
-                <%=@likes_count%>
+                
 
         
         </div>

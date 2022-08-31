@@ -2,10 +2,12 @@
 
     
 
-    <img src="<%=@post.post_image1%>">
-    <img src="<%=@post.post_image2%>">
-    <img src="<%=@post.post_image3%>">
+    <img src="<%="/user_images/#{@post.post_image1}"%>">
+    <img src="<%="/user_images/#{@post.post_image2}"%>">
+    <img src="<%="/user_images/#{@post.post_image3}"%>">
+    <%=@post.title%>
     <%=@post.content%>
+    <%=@likes_count%>
             
 
 
@@ -20,7 +22,9 @@
 <div class="comment-container">
     <% @reviews.each do |review| %>
       <div>
-      <%=review.content%>
+      <%if review.post_id==@post.id%>
+        <%=review.content%>
+      <%end%>
       <%# #.id消した %>
       <%if @current_user!=nil%>
         <%if @current_user.id==review.user_id%>

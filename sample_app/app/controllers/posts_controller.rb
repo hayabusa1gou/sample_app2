@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def index
     @posts=Post.all
+
   end
 
 
@@ -26,11 +27,30 @@ class PostsController < ApplicationController
       )
     @post.save
 
-    # if params[:post_image1]
+    if params[:post_image1]
+
+      @post.post_image1="#{@post.id}.png"
+      image1 = params[:post_image1]
+      File.binwrite("public/user_images/#{@post.post_image1}", image1.read)
+    end
+
+    if params[:post_image2]
+
+      @post.post_image2="#{@post.id}.png"
+      image2 = params[:post_image2]
+      File.binwrite("public/user_images/#{@post.post_image2}", image2.read)
+
+    end
+
+    if params[:post_image3]
+      @post.post_image3="#{@post.id}.png"
+      image3 = params[:post_image3]
+      File.binwrite("public/user_images/#{@post.post_image3}", image3.read)
+  
       
-    #   image = params[:post_image1]
-      # File.binwrite("public/user_images/1.png}", image.read)
-    # end
+    end
+
+
 
     if @post.save
       redirect_to("/posts/index")
@@ -44,6 +64,7 @@ class PostsController < ApplicationController
     @post=Post.find_by(id:params[:id])
     @reviews=Review.all
     @likes_count = Like.where(post_id: @post.id).count
+
   end
 
   def edit
