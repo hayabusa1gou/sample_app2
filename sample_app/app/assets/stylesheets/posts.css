@@ -93,6 +93,12 @@ a {
 
 .content img {}
 
+.user-header-img {
+    height: 180px;
+    background-image: url("l_e_others_501.png");
+    width: 100%;
+}
+
 img {
     border-radius: 30px
 }
@@ -164,6 +170,14 @@ img {
     height: 3.5em;
     width: 300px;
     overflow: hidden;
+}
+
+.poster-comment-container {
+    text-align: left;
+}
+
+.reviewers-comment-container {
+    text-align: right;
 }
 
 .footer-container {

@@ -39,7 +39,51 @@
       <%=@likes_count%>
 
     </div>
+
+    <div class="poster-comment-container">
+      
+      <% @reviews.each do |review| %>
+        <%if review.user_id==@post.user_id%>
+          <div>
             
+            <%if review.post_id==@post.id%>
+              <%=review.user_id%>
+              <%=review.content%>
+            <%end%>
+
+            <%if @current_user!=nil%>
+              <%if @current_user.id==review.user_id%>
+                <%=link_to("削除","/reviews/#{@post.id}/destroy")%>
+              <%end%>
+
+            <%end%>
+          </div>
+        <%end%>
+      <% end %>
+    </div>
+
+
+    <div class="reviewers-comment-container">
+      <% @reviews.each do |review| %>
+        <div>
+          <%if review.post_id==@post.id%>
+            <%=review.user_id%>
+            <%=review.content%>
+          <%end%>
+          <%if @current_user!=nil%>
+            <%if @current_user.id==review.user_id%>
+              <%=link_to("削除","/reviews/#{@post.id}/destroy")%>
+            <%end%>
+
+
+          <%end%>
+        </div>
+      
+      <% end %>
+
+    </div>
+
+    
 
 
     <div class="comment-form">
@@ -50,30 +94,6 @@
     </div>
 
 </div>
-
-<div class="comment-container">
-    <% @reviews.each do |review| %>
-      <div>
-      <%if review.post_id==@post.id%>
-        <%=review.content%>
-      <%end%>
-      <%# #.id消した %>
-      <%if @current_user!=nil%>
-        <%if @current_user.id==review.user_id%>
-          <p><%=link_to("削除","/reviews/#{@post.id}/destroy")%></p>
-        <%end%>
-
-
-      <%end%>
-      </div>
-      
-    <% end %>
-
-
-
-
-</div>
-
 
 
 
