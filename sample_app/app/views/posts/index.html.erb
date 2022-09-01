@@ -1,30 +1,59 @@
 <div class="main-container contents">
     
-    
+    <a class="posts-btn" href="/posts/new">新規登録</a>
 
         <% @posts.each do |post|%>
         
             <div class="content">
-                    
-                    <img src="<%="/user_images/#{post.post_image1}"%>">
-                    
+                    <div>
+                    <img  src="<%="/user_images/#{post.post_image1}"%>" border="1.8" >
+                    </div>
+
+                    <div>
                     <%=link_to(post.title,"/posts/#{post.id}")%>
-                
+                    </div>
                     
+
+                    <div>
                     <%if @current_user!=nil%>
                         <%if Like.find_by(post_id:post.id,user_id:@current_user.id)%>
                             
-                            <%=link_to("好き","/likes/#{post.id}/destroy")%>
+                            <%= link_to("/likes/#{post.id}/destroy") do %>
+                                <i class="fa-solid fa-heart"></i>
+                            <% end %>
 
                         <%else%>
-                            <%=link_to("普通","/likes/#{post.id}/create")%>
+                            <%= link_to("/likes/#{post.id}/create") do %>
+                                <i class="fa-regular fa-heart"></i>
+                            <% end %>
+                           
 
                         <%end%>
                     <%else%>
-                            <%=link_to("普通","/likes/#{post.id}/create")%>
+                            <%= link_to("/likes/#{post.id}/create") do %>
+                               <i class="fa-regular fa-heart"></i>
+                            <% end %>
+                           
                     <%end%>
 
-                    <%=link_to("新規投稿","/posts/new")%>
+                    <%if @current_user!=nil%>
+
+                             <%= link_to("/posts/#{post.id}") do %>
+                                <i class="fa-regular fa-comment"></i>
+                            <% end %>
+                    <%else%>
+                          
+
+                            <%= link_to("/users/login_form") do %>
+                                <i class="fa-regular fa-comment"></i>
+                            <% end %>
+                    <%end%>
+                           
+                            
+
+                    </div>
+
+                    
 
                     
 

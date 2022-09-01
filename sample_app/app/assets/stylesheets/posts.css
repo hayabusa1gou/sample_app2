@@ -80,9 +80,52 @@ a {
     flex-wrap: wrap;
 }
 
+.posts-btn {
+    position: fixed;
+    top: 500px;
+    left: 1200px;
+    z-index: 100;
+}
+
 .content {
     width: 50%;
 }
+
+.content img {}
+
+img {
+    border-radius: 30px
+}
+
+.new {
+    opacity: 0.1;
+}
+
+
+/* lll */
+
+.wrap {
+    width: 50%;
+}
+
+.swiper-slide img {}
+
+
+/* サムネイルのスタイル */
+
+.thumbnail .swiper-slide {
+    opacity: 0.5;
+}
+
+
+/* サムネイルのアクティブスタイル */
+
+.thumbnail .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+
+/* llll */
 
 .comment-form {
     position: relative;
@@ -157,5 +200,13 @@ a {
 .footer-right-container li {
     list-style-type: none;
     float: left;
-    padding: 0 20px;
+    padding: 0 10px;
+}
+
+.fa-solid {
+    color: #c93d46;
+}
+
+.fa-comment {
+    color: rgb(0, 0, 0)
 }

@@ -11,6 +11,8 @@ class PostsController < ApplicationController
 
 
   def new
+    @posts=Post.all
+
     @post=Post.new()
    
   end
@@ -108,8 +110,13 @@ class PostsController < ApplicationController
   end
 
   def searched_index
+    if params[:searched] ==""
+      @posts=Post.all
+    else  
+      @posts=Post.where(title:params[:searched])
+    end
 
-    @posts=Post.where(title:params[:searched])
+
 
   end
 
